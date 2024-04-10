@@ -2,53 +2,53 @@ Clientes
 
 
     1. El sistema me debe permitir Listar todos los clientes registrados
-    http://localhost:3008/listar/clientes
+    http://localhost:3009/list/clients
 
     2. El sistema me debe permitir Ver detalles de un cliente por ID
-    http://localhost:3008/listarClientePorId/:id
+    http://localhost:3009/listClientForId/:id
 
     3. El sistema me debe permitir Crear un nuevo cliente
-    http://localhost:3008/registro/cliente
+    http://localhost:3009/register/client
 
     4. El sistema me debe permitir Actualizar un cliente por ID
-    http://localhost:3008/actualizar/cliente/:id
+    http://localhost:3009/update/cliente/:id
 
     5. El sistema me debe permitir Eliminar un cliente por ID
-    http://localhost:3008//eliminar/cliente/:id
+    http://localhost:3009//eliminar/client/:id
 
     6. El sistema me debe permitir Ver detalles de un cliente por email
-    http://localhost:3008/listarClientePorEmail/:email
+    http://localhost:3009/listClientForEmail/:email
 
     7. El sistema me debe permitir Listar clientes por genero ya sea Masculino o femenino se envía el género por parámetro.
-    http://localhost:3008/listarPorGenero/:genero
+    http://localhost:3009/listForGender/:gender
 
     8. El sistema me debe permitir <Listar clientes por edad> se envía la edad por parámetro
-    http://localhost:3008/listarPorEdad/:edad
+    http://localhost:3009/listforAge/:age
 
 
 Libros
 
 
     1. El sistema me debe permitir Listar todos los libros registrados
-    localhost:3009/listar/libros
+      http://localhost:3009/list/books
 
     2. El sistema me debe permitir Ver detalles de un libro por ID
-    localhost:3009/listarPorId/:id
+      http://localhost:3009/listForId/:id
 
     3. El sistema me debe permitir Crear un nuevo libro
-    localhost:3009/registro/libro
+     http://localhost:3009/register/book
 
     4. El sistema me debe permitir Actualizar un libro por ID
-    localhost:3009/actualizar/libro/:id
+     http://localhost:3009/update/book/:id
 
     5. El sistema me debe permitir Eliminar un libro por ID
-    localhost:3009/eliminar/libro/:id
+     http://localhost:3009/delete/book/:id
 
     6. El sistema me debe permitir listar libros por author> se envía por parámetro el autor
-    localhost:3009/listarPorAutor/:autor
+     http://localhost:3009/listForAuthor/:autor
 
     7. El sistema me debe permitir Filtrar por nombre del libro se envía por parámetro el nombre del libro.
-    localhost:3009/listarPorNombre/:nombre
+     http://localhost:3009/listForName/:name
 
     8. El sistema me debe permitir Filtrar por cantidad de páginas se envía por parámetro la cantidad de las páginas.
-    localhost:3009/listarPorPaginas/:paginas
+     http://localhost:3009/listForPagEs/:pages

@@ -1,8 +1,8 @@
 const libro = require('../models/modelLibros');
 
-const librosController = {
+const BooksController = {
     // registrar libro
-    registro: async (req, res) => {
+    register: async (req, res) => {
         try {
             const { name, author, pages,description } = req.body;
             const nuevoLibro = new libro({
@@ -13,30 +13,30 @@ const librosController = {
             });
             await nuevoLibro.save();
             res.status(201).json({
-                message: "Libro registrado correctamente",
+                message: "book created successfully",
                 libro: nuevoLibro,
             });
         } catch (error) {
             res.status(400).json({
-                message: "Error al registrar el libro",
+                message: "Error trying to register book",
                 error: error,
             });
         }
     },
     // listar libros 
-    listar: async (req, res) => {
+    list: async (_req, res) => {
         try {
             const libros = await libro.find();
             res.status(200).json(libros);
         } catch (error) {
             res.status(400).json({
-                message: "Error al listar los libros",
+                message: " error ",
                 error: error,
             });
         }
     },
     // actualizar libro por id
-    actualizar: async (req, res) => {
+    update: async (req, res) => {
         try {
             const {name, author, pages,description } = req.body;
             const id = req.params.id;
@@ -47,18 +47,18 @@ const librosController = {
                 description: description,
             });
             res.status(200).json({
-                message: "Libro actualizado correctamente",
+                message: "book update ",
                 libro: libro,
             });
         } catch (error) {
             res.status(400).json({
-                message: "Error al actualizar el libro",
+                message: "Error update book",
                 error: error,
             });
         }
     },
     // eliminar libro por id
-    eliminar: async (req, res) => {
+    delete: async (req, res) => {
         try {
             const id = req.params.id;
             const libro = await libro.findByIdAndDelete(id);
@@ -74,53 +74,53 @@ const librosController = {
         }
     },
     // listar libro por autor
-    listarPorAutor: async (req, res) => {
+    listForAuthor: async (req, res) => {
         try {
             const author = req.params.author;
             const libros = await libro.find({ author: author });
             res.status(200).json(libros);
         } catch (error) {
             res.status(400).json({
-                message: "Error al listar los libros por autor",
+                message: "Error to list books for author",
                 error: error,
             });
         }
     },
     // listar libro por nombre
-    listarPorNombre: async (req, res) => {
+    listForName: async (req, res) => {
         try {
             const name = req.params.name;
             const libros = await libro.find({ name: name });
             res.status(200).json(libros);
         } catch (error) {
             res.status(400).json({
-                message: "Error al listar los libros por nombre",
+                message: "Error list books for name",
                 error: error,
             });
         }
     },
     // listar libro por paginas
-    listarPorPaginas: async (req, res) => {
+    listForPages: async (req, res) => {
         try {
             const pages = req.params.pages;
             const libros = await libro.find({ pages: pages });
             res.status(200).json(libros);
         } catch (error) {
             res.status(400).json({
-                message: "Error al listar los libros por paginas",
+                message: "Error to list books for pages",
                 error: error,
             });
         }
     },
     // listar libro por id
-    listarPorId: async (req, res) => {
+    listForId: async (req, res) => {
         try {
             const id = req.params.id;
             const libro = await libro.findById(id);
             res.status(200).json(libro);
         } catch (error) {
             res.status(400).json({
-                message: "Error al listar el libro por id",
+                message: "Error to list books for id",
                 error: error,
             });
         }
@@ -128,4 +128,4 @@ const librosController = {
 };
 
 
-module.exports = librosController;
+module.exports = BooksController;

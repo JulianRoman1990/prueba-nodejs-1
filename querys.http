@@ -1,16 +1,43 @@
+
+//books
+
 ###
-POST http://localhost:3008/registro/libro HTTP/1.1
+POST http://localhost:3009/register/book HTTP/1.1
 Content-Type: application/json
 
 {
-    "nombre": "la odisea",
-    "autor": "homero",
-    "paginas": 290
+    "name": "Algebra",
+    "author": "Baldor",
+    "pages": 200,
+    "description":"hola mundo"
   
 }
 
-
 ###
-GET http://localhost:3008/listar/libros HTTP/1.1
+GET http://localhost:3009/list/book HTTP/1.1
 Content-Type: application/json
 
+
+
+
+//clientes
+
+###
+POST http://localhost:3009/register/client HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "lina",
+    "lastName": "herrera",
+    "email": "teamleader@gmail.com",
+    "gender": "femenino",
+    "age": 26
+
+}
+
+###
+GET http://localhost:3009/list/clients HTTP/1.1
+Content-Type: application/json
+
+
+###

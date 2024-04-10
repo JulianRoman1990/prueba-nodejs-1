@@ -1,8 +1,9 @@
 const cliente = require("../models/modelClientes");
+const { update } = require("./controlLibros");
 
 const clientesController = {
   // registrar cliente
-  registro: async (req, res) => {
+  register: async (req, res) => {
     try {
       const { name, lastName, email, gender, age } = req.body;
       const nuevoCliente = new cliente({
@@ -15,7 +16,7 @@ const clientesController = {
       await nuevoCliente.save();
       res.status(201).json({
         message: "Cliente registrado correctamente",
-        cliente: newCliente,
+        cliente: nuevoCliente,
       });
     } catch (error) {
       res.status(400).json({
@@ -25,7 +26,7 @@ const clientesController = {
     }
   },
   // listar clientes
-  listar: async (req, res) => {
+  list: async (req, res) => {
     try {
       const clientes = await cliente.find();
       res.status(200).json(clientes);
@@ -37,7 +38,7 @@ const clientesController = {
     }
   },
   // actualizar cliente
-  actualizar: async (req, res) => {
+  update: async (req, res) => {
     try {
       const { name, lastName, email, gender, age } = req.body;
       const id = req.params.id;
@@ -60,7 +61,7 @@ const clientesController = {
     }
   },
   // eliminar cliente
-  eliminar: async (req, res) => {
+  delete: async (req, res) => {
     try {
       const id = req.params.id;
       const cliente = await cliente.findByIdAndDelete(id);
@@ -76,7 +77,7 @@ const clientesController = {
     }
   },
   // listar cliente por genero
-  listarPorGenero: async (req, res) => {
+  listForGender: async (req, res) => {
     try {
       const gender = req.params.genero;
       const clientes = await cliente.find({ gender: gender });
@@ -89,7 +90,7 @@ const clientesController = {
     }
   },
   // listar cliente por edad
-  listarPorEdad: async (req, res) => {
+  listForAge: async (req, res) => {
     try {
       const age = req.params.age;
       const clientes = await cliente.find({ age: age });
@@ -102,7 +103,7 @@ const clientesController = {
     }
   },
   // listar cliente por email
-  listarClientePorEmail: async (req, res) => {
+  listClientForEmail: async (req, res) => {
     try {
       const email = req.params.email;
       const clientes = await cliente.find({ email: email });
@@ -115,7 +116,7 @@ const clientesController = {
     }
   },
   // listar cleinte por id
-  listarClientePorId: async (req, res) => {
+  listClientForId: async (req, res) => {
     try {
       const id = req.params.id;
       const cliente = await cliente.findById(id);

@@ -3,14 +3,14 @@ const clientesController = require('../controllers/controlClientes');
 
 const router = express.Router();
 
-router.post('/registro/cliente', clientesController.registro);
-router.get('/listar/clientes', clientesController.listar);
-router.put('/actualizar/cliente/:id', clientesController.actualizar);
-router.delete('/eliminar/cliente/:id', clientesController.eliminar);
-router.get('/listarPorGenero/:genero', clientesController.listarPorGenero);
-router.get('/listarPorEdad/:edad', clientesController.listarPorEdad);
-router.get('/listarClientePorEmail/:email', clientesController.listarClientePorEmail);
-router.get('/listarClientePorId/:id', clientesController.listarClientePorId);
+router.post('/register/client', clientesController.register);
+router.get('/list/clients', clientesController.list);
+router.put('/update/client/:id', clientesController.update);
+router.delete('/delete/client/:id', clientesController.delete);
+router.get('/listForGender/:gender', clientesController.listForGender);
+router.get('/listForAge/:age', clientesController.listForAge);
+router.get('/listClientForEmail/:email', clientesController.listClientForEmail);
+router.get('/listClientForId/:id', clientesController.listClientForId);
 
 
 module.exports = router;

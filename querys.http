@@ -1,0 +1,16 @@
+###
+POST http://localhost:3008/registro/libro HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "la odisea",
+    "autor": "homero",
+    "paginas": 290
+  
+}
+
+
+###
+GET http://localhost:3008/listar/libros HTTP/1.1
+Content-Type: application/json
+
